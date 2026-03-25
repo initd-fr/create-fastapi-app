@@ -1,0 +1,10 @@
+[project.scripts]
+name = "create-fastapi-app"
+version = "0.1.0"
+description = "Opinionated CLI to generate production-ready FastAPI boilerplate with typing and linting."
+readme = "README.md"
+license = "MIT"
+requires-python = ">=3.12"
+dependencies = [
+    "typer>=0.24.1",
+]

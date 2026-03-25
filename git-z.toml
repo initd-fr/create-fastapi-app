@@ -1,0 +1,48 @@
+# ---------------------------------------------------------
+#  COMMIT TYPES
+# ---------------------------------------------------------
+[types]
+WIP = "Work in progress — Feature not finished yet"
+ADD = "New feature or new file"
+FIX = "Bug fix"
+UPDATE = "Improvement or modification"
+DELETE = "Delete file or code"
+CONFIG = "Configuration / dependencies / setup"
+DOCS = "Documentation only"
+REFACTOR = "Refactor without behaviour change"
+STYLE = "Formatting, CSS, typo, cleanup"
+
+# ---------------------------------------------------------
+#  COMMIT SCOPES
+# ---------------------------------------------------------
+[scopes]
+accept = "list"
+
+list = [
+  "route",
+  "controllers",
+  "security",
+  "storage",
+  "external-api",
+  "data-schema",
+  "auth",
+  "config",
+]
+
+# ---------------------------------------------------------
+#  TICKET CONFIG
+# ---------------------------------------------------------
+[ticket]
+required = false
+prefixes = ["#"]
+
+# ---------------------------------------------------------
+#  COMMIT TEMPLATE
+# ---------------------------------------------------------
+[templates]
+commit = """
+{{ type }} {{ description }}{% if scope %} ({{ scope }}){% endif %}{% if ticket %} — {% if type == "WIP" %}Refs{% else %}Closes{% endif %} {{ ticket }}{% endif %}
+
+# Optional detailed description below:
+
+"""
