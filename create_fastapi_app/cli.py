@@ -58,7 +58,7 @@ def main():
         click.echo("\nAborted.")
 
 
-def ask_questions():
+def ask_questions() -> Project:
     click.echo(
         r"""
  _____                _        ______        _              _    ___

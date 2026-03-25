@@ -14,3 +14,9 @@ create-fastapi-app = "create_fastapi_app.cli:main"
 
 [tool.setuptools.packages.find]
 include = ["create_fastapi_app*"]
+
+[dependency-groups]
+dev = [
+    "mypy>=1.19.1",
+    "ruff>=0.15.7",
+]
