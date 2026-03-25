@@ -4,7 +4,7 @@
 
 CLI to scaffold clean, production-ready FastAPI projects with modern tooling.
 
-![python](https://img.shields.io/badge/python-3.10%2B-blue)![fastapi](https://img.shields.io/badge/fastapi-%23009688)![ruff](https://img.shields.io/badge/ruff-linting-red)![mypy](https://img.shields.io/badge/mypy-typing-blue)![license](https://img.shields.io/badge/license-MIT-green)
+![python](https://img.shields.io/badge/python-3.10%2B-blue) ![fastapi](https://img.shields.io/badge/fastapi-%23009688) ![ruff](https://img.shields.io/badge/ruff-linting-red) ![mypy](https://img.shields.io/badge/mypy-typing-blue) ![license](https://img.shields.io/badge/license-MIT-green)
 
 ---
 
@@ -89,25 +89,27 @@ This project uses [git-z￼](https://github.com/ejpcmac/git-z) for commit standa
 Please follow the commit structure below:
 
 Types
-• WIP — Work in progress
-• ADD — New feature or file
-• FIX — Bug fix
-• UPDATE — Improvement or modification
-• DELETE — Removal of code or files
-• CONFIG — Configuration or dependencies
-• DOCS — Documentation only
-• REFACTOR — Refactoring without behavior change
-• STYLE — Formatting or minor cleanup
+
+- WIP — Work in progress
+- ADD — New feature or file
+- FIX — Bug fix
+- UPDATE — Improvement or modification
+- DELETE — Removal of code or files
+- CONFIG — Configuration or dependencies
+- DOCS — Documentation only
+- REFACTOR — Refactoring without behavior change
+- STYLE — Formatting or minor cleanup
 
 Scopes
-• route
-• controllers
-• security
-• storage
-• external-api
-• data-schema
-• auth
-• config
+
+- route
+- controllers
+- security
+- storage
+- external-api
+- data-schema
+- auth
+- config
 
 Format :
 
@@ -117,10 +119,10 @@ TYPE description (scope)
 
 ### Guidelines
 
-    •	Keep changes focused and minimal
-    •	Follow the existing project structure
-    •	Write clear and explicit commit messages
-    •	Ensure code is typed and linted
+- Keep changes focused and minimal
+- Follow the existing project structure
+- Write clear and explicit commit messages
+- Ensure code is typed and linted
 
 ## License
 
