@@ -2,127 +2,144 @@
 
 ![logo](./img/logo.png)
 
-CLI to scaffold clean, production-ready FastAPI projects with modern tooling.
+CLI project in active development to scaffold clean FastAPI applications with a structured and opinionated setup.
 
-![python](https://img.shields.io/badge/python-3.10%2B-blue) ![fastapi](https://img.shields.io/badge/fastapi-%23009688) ![ruff](https://img.shields.io/badge/ruff-linting-red) ![mypy](https://img.shields.io/badge/mypy-typing-blue) ![license](https://img.shields.io/badge/license-MIT-green)
+![python](https://img.shields.io/badge/python-3.12%2B-blue)
+![ruff](https://img.shields.io/badge/ruff-linting-red)
+![mypy](https://img.shields.io/badge/mypy-typing-blue)
+![license](https://img.shields.io/badge/license-MIT-green)
 
 ---
 
 ## Overview
 
-create-fastapi-app is a CLI tool to quickly bootstrap a clean and structured FastAPI project.
+create-fastapi-app is a Python CLI project designed to standardize and accelerate the creation of backend services using FastAPI.
 
-It provides a minimal, opinionated setup with modern tooling, allowing you to focus on building your application instead of configuring your environment.
-
----
-
-## Features
-
-- Project scaffolding for FastAPI with structured architecture
-- Multiple project architectures (minimal, modular, clean architecture)
-- Database support (SQLite, PostgreSQL) with optional advanced configurations
-- ORM integration (SQLAlchemy or Prisma)
-- Optional async task systems (FastAPI background tasks, Celery, Arq)
-- Built-in rate limiting support
-- Environment configuration with pydantic-settings
-- Static typing with mypy
-- Linting and formatting with Ruff
-- Opinionated project structure for maintainability and scalability
+The goal is to provide a clean, maintainable starting point with modern tooling and strong conventions.
 
 ---
 
-## Installation
+## Project Status
+
+> **Work in progress**
+
+The CLI foundations and interactive configuration flow are implemented.  
+FastAPI project generation is currently under development.
+
+---
+
+## Current Scope
+
+What is currently available:
+
+- Interactive CLI entrypoint (`create-fastapi-app`)
+- Project configuration wizard (project name, stack options, etc.)
+- Typed configuration models
+- Restart / validation flow before generation
+- Linting with Ruff
+- Static typing with Mypy
+
+---
+
+## What it does today
+
+The CLI currently allows you to:
+
+- run an interactive setup wizard
+- define the structure and options of a future FastAPI project
+- iterate on configuration before generation is implemented
+
+Example:
 
 ```bash
-pip install create-fastapi-app
+create-fastapi-app
 ```
 
-## Usage
+## Planned Features
+
+    - FastAPI project scaffolding (file and folder generation)
+    - Multiple architecture templates (minimal, modular, clean architecture)
+    - Environment configuration
+    - Optional database setup (SQLite, PostgreSQL, pgvector)
+    - ORM integration (SQLAlchemy, SQLModel)
+    - Async task systems (background tasks, Celery, Arq)
+    - Rate limiting setup
+    - Git initialization and commit tooling
+    - Dependency installation automation
+
+## Development Setup
+
+### Clone the repository and install dependencies:
 
 ```bash
-create-fastapi-app my_project
-cd my_project
-uv run uvicorn main:app --reload
-```
-
-## Generated Structure
-
-```
-my_project/
-├── main.py
-├── app/
-│   ├── routes/
-│   ├── services/
-│   └── schemas/
-├── pyproject.toml
-```
-
-## Philosophy
-
-This tool follows an opinionated approach.
-
-The goal is to provide a clean, consistent and maintainable starting point without unnecessary configuration complexity.
-
-## Contributing
-
-Contributions are welcome. Before opening a pull request, please ensure that your changes follow the project conventions.
-
-## Development setup
-
-```bash
+git clone https://github.com/initd-fr/create-fastapi-app.git
+cd create-fastapi-app
 uv sync
 ```
 
-### Code quality
+### Install locally in editable mode:
 
-Run linting and type checking before committing:
+```bash
+uv pip install -e .
+```
+
+### Run the CLI:
+
+```bash
+create-fastapi-app
+```
+
+## Code Quality
+
+Before committing, ensure code quality:
 
 ```bash
 uv run ruff check .
 uv run mypy .
 ```
 
-### Commit convention
+## Contributing
 
-This project uses [git-z￼](https://github.com/ejpcmac/git-z) for commit standardization.
+Contributions are welcome — but must follow the project’s standards.
 
-Please follow the commit structure below:
+Before opening a pull request:
 
-Types
+- keep changes focused and minimal
+  - respect the existing project structure
+  - ensure code is typed and linted
+  - follow commit conventions
 
-- WIP — Work in progress
-- ADD — New feature or file
-- FIX — Bug fix
-- UPDATE — Improvement or modification
-- DELETE — Removal of code or files
-- CONFIG — Configuration or dependencies
-- DOCS — Documentation only
-- REFACTOR — Refactoring without behavior change
-- STYLE — Formatting or minor cleanup
+### Commit Convention
 
-Scopes
-
-- route
-- controllers
-- security
-- storage
-- external-api
-- data-schema
-- auth
-- config
-
-Format :
+This project uses a structured commit format:
 
 ```
 TYPE description (scope)
 ```
 
-### Guidelines
+Types - INIT — Initial setup - FEAT — New feature - FIX — Bug fix - CHORE — Maintenance / tooling - REFACTOR — Code improvement without behavior change - STYLE — Formatting / lint fixes - DOCS — Documentation - BUILD — Packaging / release
 
-- Keep changes focused and minimal
-- Follow the existing project structure
-- Write clear and explicit commit messages
-- Ensure code is typed and linted
+Scopes - cli - generator - template - config - dependencies - typing - lint - docs
+
+Example:
+
+```
+FEAT add CLI question flow (cli)
+```
+
+## Roadmap
+
+[X] CLI initialization
+[X] Interactive configuration flow
+[X] Typing and linting setup
+[ ] FastAPI project generation
+[ ] Architecture templates
+[ ] Configuration system
+[ ] PyPI release
+
+## Why this project
+
+This project aims to: - reduce friction when starting backend services - enforce best practices early - provide a consistent development baseline - improve long-term maintainability
 
 ## License
 
