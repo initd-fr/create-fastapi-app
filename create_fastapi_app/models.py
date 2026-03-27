@@ -3,6 +3,11 @@ from enum import Enum
 from pydantic import BaseModel
 
 
+class StructureChoice(str, Enum):
+    MINIMAL = "minimal"
+    MODULAR = "modular"
+
+
 class PackageManager(str, Enum):
     PIP = "pip"
     UV = "uv"
@@ -22,19 +27,16 @@ class Orm(str, Enum):
     SQLMODEL = "sqlmodel"
 
 
-class AsyncTask(str, Enum):
-    NONE = "none"
-    BACKGROUND = "background"
-    CELERY = "celery"
-    ARQ = "arq"
-
-
 class Project(BaseModel):
     project_name: str
+    project_structure: StructureChoice
     package_manager: PackageManager
+    use_typing: bool
+    use_ruff: bool
+    enable_cors: bool
+    allowed_origins: list[str] | None = None
     database: Database
     orm: Orm
-    async_task: AsyncTask
     rate_limiting: bool
     config: bool
     git: bool
